@@ -5,7 +5,7 @@ import mysql.connector as mysql
 
 
 class ConnMYSQL:
-    conn = mysql.connect(host='45.159.149.49', user='root', password='0933', database='insert_info')
+    conn = mysql.connect(host='*', user='*', password='*', database='*')
 
     @classmethod
     def connect(cls, code):

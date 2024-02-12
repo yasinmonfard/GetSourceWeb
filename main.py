@@ -2,7 +2,7 @@ from handeler import WebSiteLine
 
 
 def main():
-    web = WebSiteLine('https://niazmandiha.co')
+    web = WebSiteLine('URL_PAGE')
     for i in web.website.get_url_page():
         web.website.save_data_sql(i)
 
