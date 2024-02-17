@@ -5,12 +5,13 @@ import mysql.connector as mysql
 
 
 class ConnMYSQL:
-    conn = mysql.connect(host='*', user='*', password='*', database='*')
-
-    @classmethod
-    def connect(cls, code):
-        cls.conn.cursor().execute(code)
-        return cls.conn.commit()
+    pass
+    # conn = mysql.connect(host='*', user='*', password='*', database='*')
+    #
+    # @classmethod
+    # def connect(cls, code):
+    #     cls.conn.cursor().execute(code)
+    #     return cls.conn.commit()
 
 
 class Connections(ABC):
@@ -91,7 +92,7 @@ class ConnectWeb(STATUS_CODE, WEBSITE, FIND_SOURCE_WEB, SAVE_CODE, SQL_SAVE_DATA
     def save_data_sql(cls, values):
         cls.__show_numbers.append(values)
         print(f'Please wait Data Saved in Database, Save Files: {len(cls.__show_numbers)}')
-        ConnectWeb.connect(code=f'insert into web_url values ("{values}")')
+        cls.connect(code=f'insert into web_url values ("{values}")')
     # soup = self.export_source_page()
     # for i in soup.find_all(name_file):
     #     ss = i.get(html_tah)
